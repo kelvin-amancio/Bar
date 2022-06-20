@@ -9,14 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <style>
-        .modal{
-            width: 300px;
-            
-        }
+
         .modal-content{
             width: 300px;
             
@@ -38,130 +36,232 @@
           font-size: 28px;
         }
         .bar{
-          width: 3.8rem;
-          border-radius: 7px;
-          /* border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px; */
-          height: auto;
+          width: 4.3rem;
+          border-radius: 0px;
+          height: 100%;
           display: inline-block;
-          margin-left: 0.5rem;
-          margin-top: 1.8rem;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          margin-top: 3.4rem;
+          position:fixed;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          transition: 1s ease;
         }
+        /* .bar:hover{
+          width: 15.25rem;
+          border-radius: 0px;
+          height: 100%;
+          display: inline-block;
+          margin-top: 3.4rem;
+          position:fixed;
+          transition: 1s ;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        } */
         .space, .img{
-          margin-top: 6.25rem;
-          margin-bottom: 6.0rem;
-          text-align: center;
+          margin-top: 2rem;
+          margin-bottom: 3.0rem;
+          text-align: left;
+          margin-left: 0.5em;
           cursor: pointer;
         }
-        .bordas{
-          background-color:rgba(44, 44, 44, 0.918)!important ;
-          margin-left: 1rem;
-          width: 150px;
-          height: 2.5rem;
-          margin-top: -8.5rem;
-          border-radius: 6px;
-          opacity: 0;
+        .exit2, .imgExit{
+          margin-top: 18.2rem;
+          margin-bottom: 3.0rem;
+          text-align: left;
+          margin-left: 0.5em;
+          cursor: pointer;
+        }
+        .imgExit:hover, .exit2{
+          transform: translatey(0px);
+          animation: float 5s ease-in infinite;
         }
         
-        .bordas:hover{
-          background-color: black;
-          margin-left: 20px;
-          width: 250px;
-          height: 2.5rem;
-          border-radius: 4px;
-          transition: 2s ease-in-out ;
-          opacity: 1;
-        }
         .space, .img:hover{
-          cursor: pointer;
           transform: translatey(0px);
           animation: float 5s ease-in-out infinite;
         }
-        .space:hover{
-          color: rgb(136, 136, 136);
-          transition: all 0.6s cubic-bezier(0.165,0.84,0.44,1);
-       
-        }
+        
 
         h4{
-          margin-top: 10px;
+          margin-top: -2.2rem;
           margin-left: 3.5rem;
-          text-align: center;
           color: rgb(255, 255, 255);
-          font-size: 20px;
-          font-family: 'Kdam Thmor Pro', sans-serif;
-        opacity: 0;
-        }
-        h4:hover{
-          opacity: 1;
+          font-size: 23px;
+          transition: 1s ;
+          opacity: 0;
         }
 
-        @media(max-width: 1100px){
+        .logo{
+          color: white;
+          text-align: center;
+          margin-top: 1rem;
+          
+        }
+
+    
+     @media(max-width: 600px){
         .bar{
-        display: none;}}
+          display: none;
+        }
+     }
 
+     @media(max-width: 600px){
+      #check:checked ~ .bar{
+        width: 100%;
+        background-color: red;
+      }
+     }
+  
+    #check:checked ~ .bar {
+         width: 15.25rem;
+          border-radius: 0px;
+          height: 100%;
+          display: inline-block;
+          margin-top: 3.4rem;
+          position:fixed;
+          transition: 1s ;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    #check:checked ~ .bar .close{
+  display: block;
+  opacity: 1;
+}
+
+    #check:checked ~ .bar h3{
+  opacity: 1;
+  }
+
+      h3{
+        margin-left: 0.8rem;
+        opacity: 0;
+        
+      }
+
+      .close{
+      opacity: 0;
+     }
 
           @keyframes float{
             0%{
               transform:  translatey(0px);
             }
             50%{
-              transform:  translatey(-5px);
+              transform:  translatey(-2px);
             }
             100%{
               transform:  translatey(0px);
             }
           }
 
+  label #btn{
+    cursor: pointer;
+    font-size: 25px;
+    top: 65px;
+    cursor: pointer;
+    /* background-color: #042331; */
+    border: 2px solid rgba(70, 69, 69, 0.199);
+    padding: 6px 12px;
+    background-color: rgba(71, 71, 71, 0.123);
+    transition: 0.7s;
+  }
+    #bnt:active{
+      border: 2px solid rgba(141, 141, 141, 0.527);
+    }
 
+    #btn:hover{
+    
+      transition: 0.7s;
+    }
+
+    .iconBar{
+      font-size: 28px;
+      border-radius: 7px;
+      color: rgba(255, 255, 255, 0.596);
+    }
+
+    input{
+    display: none;
+    }
+
+     /* @media(max-width: 600px){
+        .barraMobile{
+          width: 20.3rem;
+          border-radius: 9px;
+          height: 6rem;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          display: flex;
+          margin-top: 42.4rem;
+          margin-left: 2rem;
+          position:fixed;
+          background-color: rgb(107, 107, 107);
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          transition: 1s ease;
+        }
+     }   */
  /* Barra lateral */
+
+
 
     </style>
 
 </head>
 
 <body>
-    
- 
-    <nav class="navbar navbar-dark bg-dark" shadow p-3 mb-5 bg-body rounded">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <span class="navbar-brand mb-0 h1">Valgroup</span>
-          <!-- <i class="bi bi-bell "></i> -->
-        </div>
-      </nav>
 
-  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen" >
-      <div class="modal-content ">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="exampleModalLabel">Logo valgroup</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body ">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" >Home</li>
-                <li class="list-group-item">Histórico</li>
-                <li class="list-group-item">Romaneios</li>
-                <li class="list-group-item">Gráficos</li>
-              </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
+  <!-- <div class="barraMobile"> 
+    <h2>Home</h2>
+    <h2>Romaneio</h2>
+    <h2>Gráficos</h2>
+  </div> -->
+
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+    <label for="check" >
+     <i class="fa fa-bars iconBar" id="btn"></i>
+    </label>
+      <a class="navbar-brand text-white txtt" href="#">Valgroup</a>
     </div>
-  </div>
+  </nav> 
 
-<div class="bar bg-dark ">
-  <div class="img "><i class="bi bi-house-door-fill space"></i></div><div class="bordas"><h4>Home</h4></div>
-  <div class="img"><i class="bi bi-clock-fill space "></i></div><div class="bordas"><h4>Romaneio</h4></div>
-  <div class="img"><i class="bi bi-archive-fill space"></i></div><div class="bordas"><h4>Histórico</h4></div>
-  <div class="img"><i class="bi bi-bar-chart-fill space "></i></div><div class="bordas"><h4>Gráficos</h4></div>
+<input type="checkbox"  id="check">
+<div class="bar bg-dark">
+  <h3 class="logo">Valgroup</h3>
+  <div class="img"><i class="bi bi-house-door-fill space" title="Home"></i><h4 class="close">Home</h4></div>
+  <div class="img"><i class="bi bi-clock-fill space" title="Romaneio"></i><h4 class="close">Romaneio</h4></div>
+  <div class="img"><i class="bi bi-archive-fill space" title="Histórico"></i><h4 class="close">Histórico</h4></div>
+  <div class="img"><i class="bi bi-bar-chart-fill space" title="Gráficos"></i><h4 class="close">Gráficos</h4></div>
+  <div class="imgExit"><i class="bi bi-box-arrow-right space" title="Sair"></i><h4 class="close">Sair</h4></div>
 </div>
+
+<br><br><br>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+<h2 class="text-center">oi</h2>
+
 
 </body>
 
